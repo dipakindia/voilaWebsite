@@ -1,0 +1,123 @@
+<!-- New Arrivals -->
+<section class="section-wrap new-arrivals pb-40">
+  <div class="container">
+
+    <div class="row heading-row">
+      <div class="col-md-12 text-center">
+        <h2 class="heading uppercase"><small>Featured</small></h2>
+      </div>
+    </div>
+
+    <div class="row row-10">              
+
+      <div class="col-md-3 col-xs-6" ng-repeat="product in ctrl.recommended1">
+        <div class="product-item">
+          <div class="product-img">
+            <a ui-sref="productDetails({slug:product.slug})">
+              <img ng-if="product.images.length >= 2"
+                   ng-src="{{product.images[0].thumbnailUrl}}" alt="{{product.name}}">
+              <img ng-if="product.images.length >= 2"
+                   ng-src="{{product.images[1].thumbnailUrl}}" alt="{{product.name}}" class="back-img">
+              <img ng-if="product.images.length == 1"
+                   ng-src="{{product.images[0].thumbnailUrl}}" alt="{{product.name}}">
+            </a>
+            <div class="product-label">
+              <price variants="product.variants" discount></price>
+            </div>
+            <div class="product-actions">
+              <a ui-sref="productsSimilar({slug: product.slug, page: 1, limit: 12})" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Search by Image">
+                <i class="fa fa-camera"></i>
+              </a>
+              <a href="" ng-if="ctrl.loggedIn"
+                 ng-click="ctrl.addToWishlist(ctrl.getCode(product.variants), $index)" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
+                <i class="fa fa-heart"></i>
+              </a>
+            </div>
+          </div>
+          <div class="product-details">
+            <h3>
+              <a class="product-title"
+                 ui-sref="productDetails({slug:product.slug})">
+                {{product.brandName}} {{product.name}}
+              </a>
+            </h3>
+            <price variants="product.variants" price></price>
+            <p class="wish-added-success" ng-if="ctrl.success === $index">
+              Added to wishlist
+            </p>
+          </div>
+        </div>
+      </div>
+      
+    </div> <!-- end row -->
+  </div>
+</section> <!-- end new arrivals -->
+
+<!-- Newsletter -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="newsletter-box">
+        <h5 class="uppercase">Subscribe to Receive Our Updates</h5>
+        <form>
+          <input type="email" class="newsletter-input" placeholder="Your email">
+          <input type="submit" class="newsletter-submit btn btn-md btn-dark" value="subscribe">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Best Sellers -->
+<section class="section-wrap pb-0">
+  <div class="container">
+
+    <div class="row heading-row">
+      <div class="col-md-12 text-center">
+        <h2 class="heading uppercase"><small>Recommendations</small></h2>
+      </div>
+    </div>
+
+    <div class="row row-10">              
+
+      <div class="col-md-3 col-xs-6 animated-from-left" ng-repeat="product in ctrl.recommended2">
+        <div class="product-item">
+          <div class="product-img">
+            <a ui-sref="productDetails({slug:product.slug})">
+              <img ng-if="product.images.length >= 2"
+                   ng-src="{{product.images[0].thumbnailUrl}}" alt="{{product.name}}">
+              <img ng-if="product.images.length >= 2"
+                   ng-src="{{product.images[1].thumbnailUrl}}" alt="{{product.name}}" class="back-img">
+              <img ng-if="product.images.length == 1"
+                   ng-src="{{product.images[0].thumbnailUrl}}" alt="{{product.name}}">
+            </a>
+            <div class="product-label">
+              <price variants="product.variants" discount></price>
+            </div>
+            <div class="product-actions">
+              <a ui-sref="productsSimilar({slug: product.slug, page: 1, limit: 12})" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Search by Image">
+                <i class="fa fa-camera"></i>
+              </a>
+              <a href="" ng-if="ctrl.loggedIn"
+                 ng-click="ctrl.addToWishlist(ctrl.getCode(product.variants))" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
+                <i class="fa fa-heart"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="product-details">
+            <h3>
+              <a class="product-title"
+                 ui-sref="productDetails({slug:product.slug})">
+                {{product.brandName}} {{product.name}}
+              </a>
+            </h3>
+            <price variants="product.variants" price></price>
+          </div>                  
+
+        </div>
+      </div>            
+
+    </div> <!-- end row -->
+  </div>
+</section> <!-- end best sellers -->            
