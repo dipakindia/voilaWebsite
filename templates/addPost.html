@@ -1,0 +1,61 @@
+<br/><br/><div class="container -createPost" data-ng-controller="addPostController as $ctrl">
+    <section class="row">
+    <div class="col-sm-6">
+        <div class="register">
+          <h4 class="uppercase">Create Post</h4>
+          <form name="userForm"  enctype="multipart/form-data" ng-submit="$ctrl.postForm()"  >
+            <p class="form-row form-row-wide">
+              <label>title
+                <abbr class="required" title="required">*</abbr>
+              </label>
+              <input type="text" class="input-text" placeholder="" value="" ng-model="$ctrl.post.title" required>
+             
+            </p>
+            <p class="form-row form-row-wide">
+              <label>Slug
+                <abbr class="required" title="required">*</abbr>
+              </label>
+              <input type="text" class="input-text" placeholder="" value="" ng-model="$ctrl.post.slug" required>
+              
+            </p>
+            <p class="form-row form-row-wide">
+              <label>message
+                <abbr class="required" title="required">*</abbr>
+              </label>
+              <textarea name="" id="" cols="30" rows="10" ng-model="$ctrl.post.message" required></textarea>
+              
+              
+            </p>
+            <p class="form-row form-row-wide">
+              <label>
+                Add Images
+              </label>
+              <input type="file" fileinput="file" filepreview="filepreview" class="input-text" placeholder="" value=""  ng-model="$ctrl.post.postImageId" />
+            </p>
+          
+            
+            <p class="form-row form-row-wide">
+              <label>
+               product category
+                <abbr class="required" title="required">*</abbr>
+              </label>
+              <input type="text" class="input-text" placeholder="" value="" ng-model="$ctrl.post.productCategory" required>
+              <div class="" ng-if="ctrl.errors.maritalStatus" >
+                
+              </div>
+            </p>
+           
+           
+            <input type="submit" value="Create Post" class="btn"  />
+          </form>
+        </div>
+      </div>
+
+
+</section>
+
+</div>
+
+
+
+<br/> <br/>
