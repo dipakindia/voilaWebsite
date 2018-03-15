@@ -1,6 +1,6 @@
 
   
-  <div class="container -blog" ng-controller="BlogController as $ctrl">
+  <div class="container -blog" data-ng-controller="BlogController as $ctrl">
     <br/>
     <br/>
     <br/>
@@ -11,7 +11,7 @@
   <div class="shop-item -card" data-ng-repeat="$posts in $ctrl.blogPosts">
       <header class="-cardHead clearfix">
           <div class="col-xs-6 authorInfo">
-              <img src="img/blog/author.jpg" alt="author" class="img-circle" width="40" height="40"> <a href="#"> </a>
+              <img ng-src="img/blog/author.jpg" alt="author" class="img-circle" width="40" height="40"> <a href="#"> </a>
           </div>
           <div class="col-xs-6 -options text-right">
               <span class="fa fa-heart" aria-hidden="true"></span>
@@ -20,7 +20,7 @@
           </div>
       </header>
       <div class="featImg text-center">
-          <img src="{{$posts.img}}" alt="" class="img-responsive">
+          <img ng-src="{{$posts.postImage.url}}" alt="" class="img-responsive">
       </div>
       <footer class="related-items clear">
          

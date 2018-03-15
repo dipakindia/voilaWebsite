@@ -146,6 +146,19 @@
       templateUrl: 'templates/blog.html',
       controller: 'BlogController as ctrl'
     };
+     var blogSingle = {
+      name: 'blogSingle',
+      url: '/blog/:postId',
+      templateUrl: 'templates/blogSingle.html',
+      controller: 'BlogSingleController as ctrl'
+    };
+    
+      var addPost = {
+      name: 'addPost',
+      url: '/addPost',
+      templateUrl: 'templates/addPost.html',
+      controller: 'addPostController as ctrl'
+    };
     
     $stateProvider
       .state(home)
@@ -161,6 +174,8 @@
       .state(contact)
       .state(login)
       .state(blog)
+      .state(blogSingle)
+      .state(addPost)
       .state(error404);
 
     $urlRouterProvider.otherwise('/');
